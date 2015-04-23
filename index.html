@@ -15,7 +15,7 @@
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="sample_data.js"></script>
-    <div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+    <div id="container" style="position: relative; width: 100%;"></div>
     <ul id="results"></ul>
 
     <script>
@@ -38,13 +38,18 @@
                     'Results for ' + geo.properties.name + ':</strong> ' +
                     html + '</div>';
           }
-        }
+        },
+        responsive: true
       });
 
       Object.keys(SampleData.jokes).forEach(function(jokeId) {
         var joke = SampleData.jokes[jokeId];
         $('#results').append('<li>' + joke.name + ': ' + joke.votes + '</li>');
       });
+
+      d3.select(window).on('resize', function() {
+        map.resize();
+    });
     </script>
   </body>
 </html>
