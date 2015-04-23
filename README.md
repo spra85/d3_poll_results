@@ -12,6 +12,12 @@ Fire up localhost server, I use ruby
 ruby -run -e httpd . -p 12345
 ```
 
+If you python like... [ahem](https://github.com/csinchok):
+
+```
+python -m SimpleHTTPServer
+```
+
 Open [localhost:12345](http://localhost:12345) in a browser
 
 ## Joke JSON format
